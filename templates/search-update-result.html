@@ -1,0 +1,58 @@
+
+{% extends 'layout.html' %}
+
+{% block title %}Candidate Details{% endblock %}
+
+{% block content %}
+
+{% for item in candidate_list %}
+<h1>Update Candidate Details</h1>
+<form action="{{ url_for('edit') }}" method="POST" autocomplete="off" class=delete-entry>
+    <input type="hidden" value="{{ item[2] }}" name="old_email">
+
+<div>
+    <table>
+        <tr>
+            First Name:
+            <!--<td contenteditable="true">{{ item[0] }}</td>-->
+            <input type="text" value="{{ item[0] }}" name="new_first_name">
+        </tr>
+        <tr>
+            Last Name:
+            <!--<td contenteditable="true">{{ item[1] }}</td>-->
+            <input type="text" value="{{ item[1] }}" name="new_last_name">
+        </tr>
+        <tr>
+            E-mail:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <!--<td contenteditable="true">{{ item[2] }}</td>-->
+            <input type="text" value="{{ item[2] }}" name="new_email">
+        </tr>
+        <tr>
+            Phone No:&nbsp;
+            <!--<td contenteditable="true">{{ item[3] }}</td>-->
+            <input type="text" value="{{ item[3] }}" name="new_phone_number">
+        </tr>
+        <tr>
+            Location:&nbsp;&nbsp;&nbsp;
+            <!--<td contenteditable="true">{{ item[4] }}</td>-->
+            <input type="text" value="{{ item[4] }}" name="new_current_location">
+        </tr>
+        <tr>
+            Work Auth:
+            <!--<td contenteditable="true">{{ item[5] }}</td>-->
+            <input type="text" value="{{ item[5] }}" name="new_work_authorization">
+        </tr>
+
+    <tr>
+        Status: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <!--<td contenteditable="true">{{ item[5] }}</td>-->
+        <input type="text" value="{{ item[8] }}" name="new_status">
+
+    </tr>
+    </table>
+    <div class="msg">{{ msg }}</div>
+    <input type="submit" value="Update">
+</div>
+</form>
+{% endfor %}
+{% endblock %}

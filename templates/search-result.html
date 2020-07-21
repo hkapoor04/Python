@@ -1,0 +1,49 @@
+
+{% extends 'layout.html' %}
+
+{% block title %}Candidate Details{% endblock %}
+
+{% block content %}
+
+{% for item in candidate_list %}
+<h1>Candidate Details</h1>
+<form action="{{ url_for('delete') }}" method="POST" autocomplete="off" class=delete-entry>
+    <input type="hidden" value="{{ item[2] }}" name="email">
+
+<div>
+    <table>
+        <tr>
+            <td>First name:</td>
+            <td>{{ item[0] }}</td>
+
+        </tr>
+        <tr>
+            <td>Last name:</td>
+            <td>{{ item[1] }}</td>
+        </tr>
+        <tr>
+            <td>Email:</td>
+            <td >{{ item[2] }}</td>
+        </tr>
+        <tr>
+            <td>Phone Number:</td>
+            <td>{{ item[3] }}</td>
+        </tr>
+        <tr>
+            <td>Current Location:</td>
+            <td>{{ item[4] }}</td>
+        </tr>
+        <tr>
+            <td>Work Authorization:</td>
+            <td>{{ item[5] }}</td>
+        </tr>
+        <tr>
+            <td>Status:</td>
+            <td>{{ item[8] }}</td>
+        </tr>
+    </table>
+    <input type="submit" value="Delete">
+</div>
+</form>
+{% endfor %}
+{% endblock %}

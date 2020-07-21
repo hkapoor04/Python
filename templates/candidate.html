@@ -1,0 +1,55 @@
+{% extends 'layout.html' %}
+
+{% block title %}Candidate{% endblock %}
+
+{% block content %}
+
+
+    <h1>Add Candidate</h1>
+
+    <form action="{{ url_for('save_candidate') }}" method="POST" autocomplete="off" enctype="multipart/form-data">
+        <label for="first_name">
+            <i class="fas fa-user"></i>
+        </label>
+        <input type="text" name="first_name" placeholder="First Name" id=first_name" required>
+
+        <label for="last_name">
+            <i class="fas fa-user"></i>
+        </label>
+        <input type="text" name="last_name" placeholder="Last Name" id=last_name" required>
+
+        <label for="email">
+            <i class="fas fa-envelope"></i>
+        </label>
+        <input type="email" name="email" placeholder="Email" id="email" required>
+
+        <label for="phone_number">
+            <i class="fas fa-phone"></i>
+        </label>
+        <input type="text" name="phone_number" placeholder="Phone Number" id="phone_number" required>
+
+        <label for="current_location">
+            <i class="fas fa-location-arrow"></i>
+        </label>
+        <input type="text" name="current_location" placeholder="Current Location" id="current_location" required>
+
+        <label for="work_authorization">
+            <i class="fas fa-briefcase"></i>
+        </label>
+        <input type="text" name="work_authorization" placeholder="Work Authorization" id="work_authorization" required>
+
+        <label for="resume_upload">
+            <i class="fas fa-upload"></i>
+        </label>
+        <input type="file" name="resume_upload" id="resume_upload" required>
+
+        <label for="docs_upload">
+            <i class="fas fa-upload"></i>
+        </label>
+        <input type="file" name="docs_upload" id="docs_upload" required>
+
+        <div class="msg">{{ msg }}</div>
+        <input type="submit" value="Save">
+    </form>
+
+{% endblock %}
