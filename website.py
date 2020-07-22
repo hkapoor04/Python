@@ -153,7 +153,7 @@ This method is called when a logged in user saves the candidate details
 '''
 
 
-@app.route('/flask-intro/save_candidate', methods=['POST'])
+@app.route('/flask-intro/save_candidate', methods=['POST', 'GET'])
 def save_candidate():
     msg = ''
     if 'loggedin' in session:
@@ -197,7 +197,7 @@ This method is called when a logged in user searches for a particular candidate 
 '''
 
 
-@app.route('/flask-intro/search_result', methods=['POST'])
+@app.route('/flask-intro/search_result', methods=['POST', 'GET'])
 def search_result():
     msg = ''
     if 'loggedin' in session:
@@ -230,7 +230,7 @@ This method is called when a logged in user deletes a candidate's record
 '''
 
 
-@app.route('/flask-intro/delete', methods=['POST'])
+@app.route('/flask-intro/delete', methods=['POST', 'GET'])
 def delete():
     msg = ''
     if 'loggedin' in session:
@@ -267,7 +267,7 @@ This method is called when a logged in user clicks on update candidate button on
 '''
 
 
-@app.route('/flask-intro/search_update_result', methods=['POST'])
+@app.route('/flask-intro/search_update_result', methods=['POST', 'GET'])
 def search_update_result():
     msg = ''
     if 'loggedin' in session:
@@ -344,7 +344,7 @@ This method is called when a logged in user views the candidate's details
 '''
 
 
-@app.route('/flask-intro/view', methods=['POST'])
+@app.route('/flask-intro/view', methods=['POST', 'GET'])
 def view():
     msg = ''
     if 'loggedin' in session:
